@@ -5,7 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "ts-node src/index.ts"
+    "start:server": "ts-node src/server.ts",
+    "start:client": "ts-node src/client.ts",
+    "format": "prettier -w .",
+    "build": "tsc"
   },
   "repository": {
     "type": "git",
@@ -19,7 +22,18 @@
   },
   "homepage": "https://github.com/jeffledin/trpc-poc#readme",
   "devDependencies": {
+    "@types/express": "^4.17.13",
+    "@types/node-fetch": "^2.6.2",
+    "prettier": "^2.7.1",
     "ts-node": "^10.9.1",
     "typescript": "^4.7.4"
+  },
+  "dependencies": {
+    "@trpc/client": "^9.26.2",
+    "@trpc/server": "^9.26.2",
+    "abort-controller": "^3.0.0",
+    "express": "^4.18.1",
+    "node-fetch": "^2.6.6",
+    "zod": "^3.17.10"
   }
 }

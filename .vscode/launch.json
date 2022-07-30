@@ -7,10 +7,20 @@
     {
       "type": "node",
       "request": "launch",
-      "name": "Launch Program",
+      "name": "Launch Server",
       "skipFiles": ["<node_internals>/**"],
       "runtimeArgs": ["-r", "ts-node/register"],
-      "args": ["${workspaceFolder}/src/index.ts"],
+      "args": ["${workspaceFolder}/src/server.ts"],
+      "outFiles": ["${workspaceFolder}/**/*.js"],
+      "resolveSourceMapLocations": ["${workspaceFolder}/", "!/node_modules/**"]
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Launch Client",
+      "skipFiles": ["<node_internals>/**"],
+      "runtimeArgs": ["-r", "ts-node/register"],
+      "args": ["${workspaceFolder}/src/client.ts"],
       "outFiles": ["${workspaceFolder}/**/*.js"],
       "resolveSourceMapLocations": ["${workspaceFolder}/", "!/node_modules/**"]
     }
