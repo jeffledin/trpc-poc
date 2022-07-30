@@ -5,7 +5,7 @@ import { z } from 'zod';
 const usersRouter = trpc
   .router()
   .query('get', {
-    input: z.string(),
+    input: z.string().uuid(),
     resolve: async (req) => {
       return { id: req.input, message: 'hello world' };
     },
